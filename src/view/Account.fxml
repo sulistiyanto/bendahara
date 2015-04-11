@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" styleClass="paneList" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccountController">
+   <children>
+      <AnchorPane layoutX="150.0" prefHeight="400.0" prefWidth="200.0" styleClass="paneInput">
+         <children>
+            <Text layoutX="40.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganti Password" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Separator layoutY="28.0" prefWidth="200.0" />
+            <VBox layoutX="7.0" layoutY="38.0" prefHeight="88.0" prefWidth="186.0" spacing="3.0">
+               <children>
+                  <Label text="Username Lama :" />
+                  <TextField fx:id="txtUsernameOld" onAction="#actionUsernameOld" />
+                  <Label text="Password Lama :" />
+                  <PasswordField fx:id="txtPasswordOld" onAction="#actionPassword" />
+               </children>
+            </VBox>
+            <VBox layoutX="7.0" layoutY="172.0" prefHeight="149.0" prefWidth="186.0" spacing="3.0">
+               <children>
+                  <Label text="Username Baru :" />
+                  <TextField fx:id="txtUsername" editable="false" onAction="#actionUsername" />
+                  <Label text="Password Baru :" />
+                  <PasswordField fx:id="txtPasswordNew" editable="false" onAction="#actionPasswordNew" />
+                  <Label text="Konfirmasi Password Baru :" />
+                  <PasswordField fx:id="txtRePasswordNew" editable="false" onAction="#actionRePasswordNew" />
+               </children>
+            </VBox>
+            <Button fx:id="btnSave" layoutX="109.0" layoutY="321.0" mnemonicParsing="false" onAction="#actionSave" onKeyPressed="#pressedSave" prefHeight="25.0" prefWidth="84.0" text="Simpan">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="17px" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox fx:id="boxLoading" layoutX="4.0" layoutY="363.0" opacity="0.0" prefHeight="15.0" prefWidth="186.0">
+               <children>
+                  <Label fx:id="labelLoadingStatus" layoutX="97.0" layoutY="6.0" prefHeight="15.0" prefWidth="87.0" text="Simpan Data . . .">
+                     <font>
+                        <Font name="Segoe UI Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="progressBarLoading" prefHeight="14.0" prefWidth="100.0" progress="1.0" stylesheets="@../css/progressInfo.css" />
+               </children>
+            </HBox>
+            <Button layoutX="7.0" layoutY="321.0" mnemonicParsing="false" onAction="#actionRefresh" prefHeight="25.0" prefWidth="84.0" text="Segarkan">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" size="17px" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnChange" layoutX="109.0" layoutY="140.0" mnemonicParsing="false" onAction="#actionChange" onKeyPressed="#keyChange" prefHeight="25.0" prefWidth="84.0" text="Ganti">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CHAIN" size="17px" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="122.0" layoutX="14.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ic_launcher2.png" />
+         </image>
+         <effect>
+            <Reflection />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="92.0" fitWidth="381.0" layoutX="241.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../image/tiyanrcodes.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

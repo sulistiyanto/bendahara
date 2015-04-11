@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="590.0" prefHeight="590.0" prefWidth="800.0" styleClass="paneList" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TransactionController">
+   <children>
+      <AnchorPane layoutX="563.0" prefHeight="370.0" prefWidth="231.0" styleClass="paneInput" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Masukan Transaksi">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Separator layoutX="14.0" layoutY="32.0" prefHeight="3.0" prefWidth="198.0" />
+            <RadioButton fx:id="rbInputKredit" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" onAction="#actionInputKredit" text="Pemasukan" />
+            <RadioButton fx:id="rbInputDebet" layoutX="120.0" layoutY="45.0" mnemonicParsing="false" onAction="#actionInputDebit" text="Pengeluaran" />
+            <VBox layoutX="14.0" layoutY="75.0" prefHeight="200.0" prefWidth="198.0" spacing="5.0">
+               <children>
+                  <Label text="Tanggal :" />
+                  <DatePicker fx:id="dateInput" prefHeight="25.0" prefWidth="259.0" />
+                  <Label text="Total Transaksi :" />
+                  <TextField fx:id="txtTransaction" />
+                  <Label text="Keterangan :" />
+                  <TextArea fx:id="txtInfo" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <Button layoutX="116.0" layoutY="296.0" mnemonicParsing="false" onAction="#actionSave" prefHeight="25.0" prefWidth="94.0" text="Simpan">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="17px" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#actionRefresh" prefHeight="25.0" prefWidth="94.0" text="Segarkan">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" size="17px" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox fx:id="boxLoading" layoutX="14.0" layoutY="336.0" opacity="0.0" prefHeight="15.0" prefWidth="198.0">
+               <children>
+                  <Label fx:id="labelLoadingStatus" layoutX="97.0" layoutY="6.0" prefHeight="15.0" prefWidth="101.0" text="Simpan Data . . .">
+                     <font>
+                        <Font name="Segoe UI Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="progressBarLoading" prefHeight="14.0" prefWidth="100.0" progress="1.0" stylesheets="@../css/progressInfo.css" />
+               </children>
+            </HBox>
+            <Label fx:id="kode" layoutX="20.0" layoutY="324.0" prefHeight="14.0" prefWidth="198.0" text="Label" visible="false" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/ic_launcher2.png" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.26" />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daftar Transaksi">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Separator layoutX="14.0" layoutY="32.0" prefHeight="3.0" prefWidth="543.0" />
+      <RadioButton fx:id="rbAll" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#actionAll" text="Semua Transaksi" />
+      <RadioButton fx:id="rbListKredit" layoutX="156.0" layoutY="43.0" mnemonicParsing="false" onAction="#actionListKredit" text="Pemasukan" />
+      <RadioButton fx:id="rbListDebet" layoutX="257.0" layoutY="43.0" mnemonicParsing="false" onAction="#actionListDebet" text="Pengeluaran" />
+      <VBox layoutX="14.0" layoutY="67.0" prefHeight="52.0" prefWidth="543.0" spacing="1.0">
+         <children>
+            <Separator prefHeight="3.0" prefWidth="543.0" />
+            <Label text="Tanggal" />
+            <HBox prefHeight="25.0" prefWidth="485.0" spacing="5.0">
+               <children>
+                  <Label text="Awal :">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="dateListStart" prefHeight="25.0" prefWidth="115.0" />
+                  <Label text="Sampai :">
+                     <HBox.margin>
+                        <Insets left="2.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="dateListEnd" prefHeight="25.0" prefWidth="115.0" />
+                  <Button mnemonicParsing="false" onAction="#actionDisplay" prefHeight="25.0" prefWidth="116.0" text="Tampil">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="LIST" size="13px" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tableTransaction" layoutX="14.0" layoutY="136.0" onMouseClicked="#clickedTableTransaction" prefHeight="418.0" prefWidth="543.0">
+        <columns>
+          <TableColumn fx:id="colTanggal" prefWidth="85.0">
+               <graphic>
+                  <Label text="Tanggal">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" size="17px" />
+                     </graphic>
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colKeterangan" prefWidth="115.0">
+               <graphic>
+                  <Label prefHeight="15.0" prefWidth="95.0" text="Keterangan">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="INFO_CIRCLE" size="17px" />
+                     </graphic></Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colDebit" prefWidth="112.0">
+               <graphic>
+                  <Label prefHeight="17.0" prefWidth="102.0" text="Pengeluaran">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="17px" />
+                     </graphic></Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colKredit" prefWidth="112.0">
+               <graphic>
+                  <Label prefHeight="17.0" prefWidth="99.0" text="Pemasukan">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="17px" />
+                     </graphic></Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colSaldo" prefWidth="116.0">
+               <graphic>
+                  <Label text="Saldo">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="INBOX" size="17px" />
+                     </graphic></Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colAction" prefWidth="120.0">
+               <graphic>
+                  <Label text="Aksi">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="COG" size="17px" />
+                     </graphic>
+                  </Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colKode" minWidth="0.0" prefWidth="0.0" />
+        </columns>
+      </TableView>
+      <Separator layoutX="14.0" layoutY="123.0" prefHeight="3.0" prefWidth="543.0" />
+      <Label fx:id="label" layoutX="14.0" layoutY="559.0" prefHeight="27.0" prefWidth="441.0" text="Label">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

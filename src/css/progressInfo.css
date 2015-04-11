@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 6, 2015, 10:23:55 AM
+    Author     : sulistiyanto
+*/
+.progress-bar {
+    -fx-background-color:
+        -fx-box-border,
+        linear-gradient(to bottom, derive(-fx-color,30%) 5%, derive(-fx-color,-17%));
+    -fx-background-insets: 0, 1;
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+    -fx-focus-traversable: true;
+    -fx-border-color:#E1E1E1;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #42539d;
+    -fx-background-insets: 0, 1, 2;
+    -fx-padding: 0.416667em; /* 5 */
+    -fx-border-color:#E1E1E1;
+}
+
+.progress-bar:indeterminate .bar {
+    -fx-background-color: derive(grey, -60%);
+}
+
+.progress-bar .track {
+    -fx-background-color:
+        white;
+    -fx-background-insets:  0, 1;
+}
+
+.progress-bar:disabled {
+    -fx-opacity: 1.0
+}

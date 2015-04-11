@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" styleClass="paneList" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutController">
+   <children>
+      <HBox prefHeight="30.0" prefWidth="200.0" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <ImageView fitHeight="102.0" fitWidth="287.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../image/tiyanrcode.png" />
+               </image>
+            </ImageView>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="87.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="11.0" layoutY="23.0" prefHeight="17.0" prefWidth="488.0" text="mengadakan untuk di gunakan dan memiliki tanpa izin tertulis dari Pembuat Aplikasi." AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="36.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="21.0" layoutY="6.0" prefHeight="17.0" prefWidth="471.0" text="Dilarang mengubah, menambah, mengurangi, merusak, memindahkan, menjual," AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="38.0" layoutY="65.0" prefHeight="17.0" prefWidth="434.0" text="Lisensi penggunaan aplikasi ini deberikan kepada Yayasan Miftahul Hikmah">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <GridPane prefHeight="128.0" prefWidth="366.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="7.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="82.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="288.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Versi" />
+                  <Label text=": 1.0.0" GridPane.columnIndex="1" />
+                  <Label text=": tiyanrcode" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Copyright" GridPane.rowIndex="1" />
+                  <Label text="Alamat" GridPane.rowIndex="2" />
+                  <Label text=": Jl. Raya Tunggulrejo Ds. Tunggulrejo Kec. Singgahan" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="  Kab. Tuban - Jawa Timur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text=": sulistiyanto404@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="e-mail" GridPane.rowIndex="4" />
+                  <Label text="facebook" GridPane.rowIndex="5" />
+                  <Label text=": Tiyan Cyrus" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text=": www.tiyanrcode.uphero.com" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="website" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

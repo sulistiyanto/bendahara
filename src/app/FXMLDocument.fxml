@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" styleClass="paneList" stylesheets="@../css/loginStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.FXMLDocumentController">
+   <children>
+      <Pane layoutX="16.0" layoutY="124.0" prefHeight="265.0" prefWidth="665.0" styleClass="pane">
+         <children>
+            <Button fx:id="btnSetting" contentDisplay="TOP" layoutX="443.0" layoutY="57.0" mnemonicParsing="false" onAction="#actionSetting" prefHeight="136.0" prefWidth="136.0" text="Pengaturan">
+               <graphic>
+                  <FontAwesomeIcon glyphName="GEARS" size="100px" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnPrint" contentDisplay="TOP" disable="true" layoutX="265.0" layoutY="57.0" mnemonicParsing="false" onAction="#actionReport" prefHeight="136.0" prefWidth="136.0" text="Laporan" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="PRINT" size="100px" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnTransaction" contentDisplay="TOP" disable="true" layoutX="87.0" layoutY="57.0" mnemonicParsing="false" onAction="#actionTransaction" prefHeight="136.0" prefWidth="136.0" text="Transaksi Keuangan">
+               <graphic>
+                  <FontAwesomeIcon glyphName="MONEY" size="100px" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <Text layoutX="188.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YAYASAN MIFTAHUL HIKMAH">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <Separator layoutX="14.0" layoutY="122.0" prefHeight="0.0" prefWidth="665.0" />
+      <ImageView fitHeight="119.0" fitWidth="111.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ic_launcher2.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="142.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jl. Raya Karang Desa Sukorejo Kecamatan Parengan Kabupaten Tuban">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <HBox layoutX="142.0" layoutY="82.0" prefHeight="33.0" prefWidth="536.0" spacing="5.0" styleClass="background-header">
+         <children>
+            <Label>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="USER" size="20px" />
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtUsername" onAction="#actionUsername" promptText="Username">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </TextField>
+            <Label>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="KEY" size="20px" />
+               </graphic>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+            <PasswordField fx:id="txtPassword" onAction="#actionPassword" promptText="Password">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </PasswordField>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnLogin" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#actionLogin" onKeyPressed="#keyLogin" prefHeight="25.0" prefWidth="97.0" stylesheets="@../css/style.css" text="Login">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_IN" size="17px" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnLogout" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#actionLogout" prefHeight="25.0" prefWidth="97.0" stylesheets="@../css/style.css" text="Logout" visible="false">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="17px" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

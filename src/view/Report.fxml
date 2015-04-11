@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="413.0" styleClass="paneList" stylesheets="@../css/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.ReportController">
+   <children>
+      <AnchorPane layoutY="20.0" prefHeight="300.0" prefWidth="218.0" styleClass="paneInput" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox layoutX="14.0" layoutY="47.0" prefHeight="165.0" prefWidth="192.0" spacing="5.0">
+         <children>
+            <RadioButton fx:id="rbAll" mnemonicParsing="false" onAction="#actionAll" text="Semua Transaksi" />
+            <RadioButton fx:id="rbKredit" mnemonicParsing="false" onAction="#actionKredit" text="Pemasukan" />
+            <RadioButton fx:id="rbDebit" mnemonicParsing="false" onAction="#actionDebit" text="Pengeluaran" />
+            <Label text="Tanggal Awal :" />
+            <DatePicker fx:id="dateStart" />
+            <Label text="Tanggal Akhir :" />
+            <DatePicker fx:id="dateEnd" />
+         </children>
+      </VBox>
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Print Laporan">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Separator layoutX="14.0" layoutY="35.0" prefHeight="5.0" prefWidth="192.0" />
+      <Button layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#actionExport" prefHeight="25.0" prefWidth="87.0" text="Export">
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" glyphName="SHARE_ALT" size="17px" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="120.0" layoutY="245.0" mnemonicParsing="false" onAction="#actionPrint" prefHeight="25.0" prefWidth="87.0" text="Tampil">
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" glyphName="LIST" size="17px" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="243.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ic_launcher2.png" />
+         </image>
+         <effect>
+            <Reflection />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

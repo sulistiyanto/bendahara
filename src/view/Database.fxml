@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="500.0" styleClass="paneList" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DatabaseController">
+   <children>
+      <Accordion layoutX="6.0" layoutY="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane text="Import">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="paneList">
+                     <children>
+                        <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restore/ Import Database">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Separator layoutX="16.0" layoutY="42.0" prefHeight="2.0" prefWidth="466.0" />
+                        <AnchorPane layoutX="15.0" layoutY="75.0" prefHeight="242.0" prefWidth="468.0" styleClass="paneInput">
+                           <children>
+                              <VBox layoutX="86.0" layoutY="40.0" prefHeight="89.0" prefWidth="298.0" spacing="5.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="39.0">
+                                 <children>
+                                    <Label text="Lokasi File" />
+                                    <TextField fx:id="txtImport" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#actionRefresImport" prefHeight="25.0" prefWidth="112.0" text="Segarkan">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" size="17px" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#actionChooseImport" prefHeight="25.0" prefWidth="112.0" text="Pilih">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="FOLDER_OPEN" size="17px" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button layoutX="85.0" layoutY="161.0" mnemonicParsing="false" onAction="#actionImport" prefHeight="25.0" prefWidth="297.0" text="Restore/ Import">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="DOWNLOAD" size="17px" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <HBox fx:id="boxLoading1" layoutX="87.0" layoutY="201.0" opacity="0.0" prefHeight="15.0" prefWidth="293.0">
+                                 <children>
+                                    <Label fx:id="labelLoadingStatus1" layoutX="97.0" layoutY="6.0" prefHeight="15.0" prefWidth="139.0" text="Simpan Data . . .">
+                                       <font>
+                                          <Font name="Segoe UI Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ProgressBar fx:id="progressBarLoading1" prefHeight="14.0" prefWidth="184.0" progress="1.0" stylesheets="@../css/progressInfo.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane text="Export ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="paneList">
+                     <children>
+                        <AnchorPane layoutX="15.0" layoutY="75.0" prefHeight="242.0" prefWidth="468.0" styleClass="paneInput">
+                           <children>
+                              <VBox layoutX="86.0" layoutY="40.0" prefHeight="89.0" prefWidth="298.0" spacing="5.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="39.0">
+                                 <children>
+                                    <Label text="Lokasi File" />
+                                    <TextField fx:id="txtExport" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#actionRefreshExport" prefHeight="25.0" prefWidth="112.0" text="Segarkan">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="REFRESH" size="17px" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#actionChooseExport" prefHeight="25.0" prefWidth="112.0" text="Pilih">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="FOLDER_OPEN" size="17px" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button layoutX="85.0" layoutY="161.0" mnemonicParsing="false" onAction="#actionExport" prefHeight="25.0" prefWidth="297.0" text="Backup/ Export">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="UPLOAD" size="17px" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <HBox fx:id="boxLoading" layoutX="85.0" layoutY="201.0" opacity="0.0" prefHeight="15.0" prefWidth="293.0">
+                                 <children>
+                                    <Label fx:id="labelLoadingStatus" layoutX="97.0" layoutY="6.0" prefHeight="15.0" prefWidth="139.0" text="Simpan Data . . .">
+                                       <font>
+                                          <Font name="Segoe UI Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ProgressBar fx:id="progressBarLoading" prefHeight="14.0" prefWidth="184.0" progress="1.0" stylesheets="@../css/progressInfo.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="15.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bakcup/ Export Database">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Separator layoutX="16.0" layoutY="42.0" prefHeight="4.0" prefWidth="466.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
